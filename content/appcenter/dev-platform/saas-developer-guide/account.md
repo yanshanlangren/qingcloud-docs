@@ -13,7 +13,7 @@ weight: 2
 
 ### 第一步: 使用授权码获取access_token
 
-在应用需要使用云平台 SSO 场景下, 用户登录云平台 SSO 成功后, 系统会重定向到应用配置的 URL, 并在URL中以?code=xxxx的方式附带上授权码.
+在应用需要使用云平台 SSO 场景下, 用户登录云平台 SSO 成功后, 系统会重定向到应用配置的 URL, 并在URL中以?code=xxxx的方式附带上授权码, 从Appcenter的开发者页面找到 client_id 和 client_secret. 
 
 调用POST **/sso/token/**(SSO域) 使用授权码获取access_token
 
@@ -23,10 +23,9 @@ weight: 2
 | ------------------ | -------- | ------------------- | ------------ |
 | grant_type         | string   | 授权模式，固定值：authorization_code | Yes |
 | code               | string   | 授权码 | Yes |
-| redirect_uri | integer | 重定向的URI | Yes |
 | client_id | string | 客户端ID | Yes |
 | client_secret | string | 客户端密钥 | Yes |
-| token_issuer | string | 指定令牌颁发者（不传，默认为SSO颁发token）参数可选值：iam、iam_jwt | No |
+
 
 **Response Parameters**
 
